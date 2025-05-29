@@ -1,8 +1,10 @@
 package com.example;
 
 import java.util.ArrayList;
-import java.util.Collections;;
+import java.util.Collections;
 import java.util.List;
+
+;
 
 public class Users {
     private static final Users INSTANCE = new Users();

@@ -1,6 +1,5 @@
 package com.example.listener;
 
-import javax.servlet.ServletContextAttributeEvent;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
