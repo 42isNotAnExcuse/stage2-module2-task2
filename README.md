@@ -1,7 +1,12 @@
 # Servlets/Filter/Session
 
 ## Description
-An application has a login page. The correct logins are "user" and "admin". The field "password" is not important, it can be any non-empty string. You need to handle login process. To achieve that create 2 servlets, a listener and a filter. All servlets, filters and listeners should be declared via annotations.
+An application has a login page. 
+The correct logins are "user" and "admin". 
+The field "password" is not important, it can be any non-empty string. 
+You need to handle login process. 
+To achieve that create 2 servlets, a listener and a filter. 
+All servlets, filters and listeners should be declared via annotations.
 
 + AuthFilter
 + ContextListener
