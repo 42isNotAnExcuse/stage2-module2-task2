@@ -15,15 +15,22 @@ public class LoginServlet extends HttpServlet {
     // LoginServlet should:
     //  check session attribute "user".
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
         //for GET request
         // if the session attribute "user" does not exist,
         //  redirect to the /login.jsp page
         //  else redirect to the /user/hello.jsp.,
-        String redirUrl = (req.getSession(false) == null
-                && req.getSession(false).getAttribute("user") == null)
-                ? "/login.jsp" : "/user/hello.jsp";
-        resp.sendRedirect(redirUrl);
+//        String redirUrl = (req.getSession(false) != null
+//                && req.getSession(false).getAttribute("user") != null)
+//                ? "/user/hello.jsp" : "/login.jsp";
+//        resp.sendRedirect(redirUrl);
+
+        if ((req.getSession(false) != null
+                && req.getSession(false).getAttribute("user") != null)) {
+            res.sendRedirect("/user/hello.jsp");
+        } else
+            req.getRequestDispatcher("/login.jsp").forward(req, res);
+
     }
 
     @Override
