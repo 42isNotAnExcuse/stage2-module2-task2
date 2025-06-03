@@ -30,7 +30,6 @@ public class LoginServlet extends HttpServlet {
             res.sendRedirect("/user/hello.jsp");
         } else
             req.getRequestDispatcher("/login.jsp").forward(req, res);
-
     }
 
     @Override
