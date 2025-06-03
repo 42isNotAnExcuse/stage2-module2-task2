@@ -21,12 +21,12 @@ public class LoginServlet extends HttpServlet {
         //  redirect to the /login.jsp page
         //  else redirect to the /user/hello.jsp.
 
-        String redirUrl = (req.getSession(false) != null
-                && req.getSession().getAttribute("user") != null)
+        String redirUrl = (req.getSession() != null &&
+                req.getSession().getAttribute("user") != null)
                 ? "/user/hello.jsp" : "/login.jsp";
         res.sendRedirect(req.getContextPath() + redirUrl);
 //            req.getRequestDispatcher(req.getContextPath() + "/login.jsp").forward(req, res);
-}
+    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
