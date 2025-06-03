@@ -11,25 +11,26 @@ public class LogoutServlet extends HttpServlet {
     //LogoutServlet should:
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
-        var session = req.getSession(false);
+        var session = req.getSession();
+//                req.getSession(false);
 
-        if (session != null) {
+//        if (session != null) {
             session.removeAttribute("user");
             session.invalidate();
-        }
+//        }
 
         res.sendRedirect(req.getContextPath() + "/login.jsp");
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
-        var session = req.getSession(false);
+        var session = req.getSession();
 
-        if (session != null) {
+//        if (session != null) {
             //delete session attribute "user".
             session.removeAttribute("user");
             // invalidate session.
             session.invalidate();
-        }
+//        }
         //redirect to /login.jsp
         res.sendRedirect(req.getContextPath() + "/login.jsp");
     }
